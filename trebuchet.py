@@ -66,16 +66,15 @@ if __name__ == "__main__":
     tries = 0
     while True:
         tries += 1
-        print(f"the target is at: {target}")
+        print(f"the target is at: {target:.2f}")
         angle = Radians(int(input("angle? (degrees): ")))
         d = distance(angle)
-        print(d)
+        print(f"your shot flew {d:.2f} meters!")
         if not check_hit(d, target):
             continue
         x, y = plot_distance(angle, d)
-        for i, _ in enumerate(x):
-            print(f"{x[i]:.2f} {y[i]:.2f}")
-        plt.plot(x, y, label="pocisk z Warwolf", color="blue")
+        plt.plot(x, y, color="blue")
+        plt.title(f"{tries} pocisk z Warwolfa")
         plt.axvline(
             x=d,
             color='red',
