@@ -5,15 +5,15 @@ from sklearn import datasets
 from sklearn.decomposition import PCA
 
 iris = datasets.load_iris()
-X = pd.DataFrame(iris.data, columns=iris.feature_names)
+iris_df = pd.DataFrame(iris.data, columns=iris.feature_names)
 
-num_features = X.shape[1]
+num_features = iris_df.shape[1]
 
 for i in range(1, num_features):
     pca = PCA(n_components=i)
-    X_pca = pca.fit_transform(X)
+    X_pca = pca.fit_transform(iris_df)
     explained_variance_ratio = np.sum(pca.explained_variance_ratio_)
-    print(f"Liczba komponentów: {i}, wariancja: {explained_variance_ratio*100}%")
+    print(f"components: {i}, variation: {explained_variance_ratio*100}%")
     if explained_variance_ratio >= 0.95:
         break
 
