@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-df = pd.read_csv("iris.csv")
+df = pd.read_csv("data/iris.csv")
 
 (train_set, test_set) = train_test_split(
     df.values,
@@ -9,11 +9,9 @@ df = pd.read_csv("iris.csv")
     random_state=288496
 )
 
-
 print(df)
 print(test_set)
 print(test_set.shape[0])
-
 
 train_inputs = train_set[:, 0:4]
 train_classes = train_set[:, 4]
