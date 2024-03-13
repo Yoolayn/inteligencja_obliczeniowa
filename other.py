@@ -10,7 +10,7 @@ from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.naive_bayes import GaussianNB
 
 # Load the dataset
-df = pd.read_csv("iris.csv")
+df = pd.read_csv("data/iris.csv")
 
 # Split the dataset into training and testing sets (70%/30%)
 train_set, test_set = train_test_split(df, test_size=0.3, random_state=288496)
