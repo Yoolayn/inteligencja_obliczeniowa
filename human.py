@@ -33,31 +33,13 @@ len = test_set.shape[0]
 for i in range(len):
     if (
         classify_iris(
-            sl=train_inputs[i][0],
-            sw=train_inputs[i][1],
-            pl=train_inputs[i][2],
-            pw=train_inputs[i][3],
-        )
-        == test_classes[i]
+            sl=test_inputs[i][0],
+            sw=test_inputs[i][1],
+            pl=test_inputs[i][2],
+            pw=test_inputs[i][3],
+        ) == test_classes[i]
     ):
         good_predictions = good_predictions + 1
-        print("GOOOD")
-    print(
-        train_inputs[i][0],
-        train_inputs[i][2],
-        train_inputs[i][2],
-        train_inputs[i][3]
-    )
-    print(
-        "Guess:",
-        classify_iris(
-            sl=train_inputs[i][0],
-            sw=train_inputs[i][1],
-            pl=train_inputs[i][2],
-            pw=train_inputs[i][3],
-        ),
-    )
-    print(test_classes[i])
 
 print(good_predictions)
 print(good_predictions / len * 100, "%")
