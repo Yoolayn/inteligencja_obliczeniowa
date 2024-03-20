@@ -43,7 +43,7 @@ model2 = MLPClassifier(
     activation="tanh",
     max_iter=1500,
     learning_rate_init=1,
-    random_state=27715
+    random_state=288501
 )
 
 model2.fit(x_train, y_train)
@@ -56,3 +56,4 @@ print(f"Dokładność modelu: {accuracy2 * 100:.2f}%")
 print("Macierz błędu:")
 print(conf_matrix2)
 # f) Odpowiedź na pytanie
+# zależne od wymagań
