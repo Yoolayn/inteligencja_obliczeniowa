@@ -1,15 +1,14 @@
-from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
-# from sklearn.datasets import load_diabetes
 from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix
+import pandas as pd
 
-# a) Podział zbioru danych na testowy (30%) i treningowy (70%)
-data = load_iris()
-# data = load_diabetes()
-# print(data)
-X = data.data
-Y = data.target
+df = pd.read_csv("data/diabetes.csv")
+
+df["class"] = df["class"].map({"tested_negative": 0, "tested_positive": 1})
+
+X = df.drop(columns=["class"])
+Y = df["class"]
 X_train, X_test, y_train, y_test = train_test_split(
     X,
     Y,
