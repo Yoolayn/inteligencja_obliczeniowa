@@ -30,7 +30,7 @@ X_test_scaled = scaler.transform(X_test)
 # 2 neurony w jednej warstwie ukrytej
 # 3 klasy irysów w warstwie wyjściowej
 mlp = MLPClassifier(
-    hidden_layer_sizes=(2, None),
+    hidden_layer_sizes=(2,),
     max_iter=1000,
     random_state=42
 )
@@ -43,7 +43,7 @@ print("Dokładność modelu MLP na zbiorze testowym:", accuracy)
 
 # f) Sprawdzenie modelu z trzema neuronami w warstwie ukrytej
 mlp_3_neurons = MLPClassifier(
-    hidden_layer_sizes=(3, None),
+    hidden_layer_sizes=(3,),
     max_iter=1000,
     random_state=42
 )
