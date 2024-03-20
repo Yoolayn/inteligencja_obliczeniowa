@@ -20,7 +20,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 # b) Budowa modelu sieci z dwiema warstwami ukrytymi
 model = MLPClassifier(
     hidden_layer_sizes=(6, 3),
-    activation='relu',
+    activation="relu",
     max_iter=500,
     learning_rate_init=0.1,
     random_state=388496
@@ -42,7 +42,7 @@ print(conf_matrix)
 
 model2 = MLPClassifier(
     hidden_layer_sizes=(10, 8, 5),
-    activation='tanh',
+    activation="tanh",
     max_iter=1500,
     learning_rate_init=1,
     random_state=388496

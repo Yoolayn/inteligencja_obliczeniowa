@@ -8,7 +8,7 @@ def forwardPass(wiek, waga, wzrost):
     hidden2_po_aktywacji = 1 / (1 + math.exp(-hidden2))
     output = (
         hidden1_po_aktywacji * -0.81546 + hidden2_po_aktywacji * 1.03775
-    ) + -0.2368
+    ) - 0.2368
     return output
 
 
