@@ -25,5 +25,6 @@ people = [
 ]
 
 for person in people:
+    print()
     print(person)
     print(forwardPass(*person))
